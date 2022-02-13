@@ -62,6 +62,8 @@ import org.lineageos.setupwizard.SetupWizardApp;
 import org.lineageos.setupwizard.SimMissingActivity;
 import org.lineageos.setupwizard.WifiSetupActivity;
 import org.lineageos.setupwizard.wizardmanager.WizardManager;
+import org.lineageos.setupwizard.LineageSettingsActivity;
+import org.lineageos.setupwizard.LocationSettingsActivity;
 
 import org.lineageos.internal.util.PackageManagerUtils;
 
@@ -280,6 +282,11 @@ public class SetupWizardUtils {
             isEthernetConnected(context)) {
             disableComponent(context, WifiSetupActivity.class);
         }
+
+        // disable location, privacy and fingerprint pages
+        disableComponent(context, LocationSettingsActivity.class);
+        disableComponent(context, LineageSettingsActivity.class);
+        disableComponent(context, BiometricActivity.class);
     }
 
     public static void disableHome(Context context) {

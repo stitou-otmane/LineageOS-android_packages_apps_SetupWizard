@@ -24,6 +24,7 @@
     android:orientation="vertical"
     android:background="@color/primary">
 
+    <!--
     <ImageView
         android:id="@+id/brand_logo"
         android:layout_width="match_parent"
@@ -34,6 +35,7 @@
         android:scaleType="fitCenter"
         android:gravity="center"
         android:padding="@dimen/content_margin_left"/>
+    -->
 
     <com.google.android.setupdesign.view.NavigationBar
         android:id="@+id/navigation_bar"
