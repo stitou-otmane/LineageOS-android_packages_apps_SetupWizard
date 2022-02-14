@@ -64,6 +64,7 @@ import org.lineageos.setupwizard.WifiSetupActivity;
 import org.lineageos.setupwizard.wizardmanager.WizardManager;
 import org.lineageos.setupwizard.LineageSettingsActivity;
 import org.lineageos.setupwizard.LocationSettingsActivity;
+import org.lineageos.setupwizard.backup.RestoreIntroActivity;
 
 import org.lineageos.internal.util.PackageManagerUtils;
 
@@ -283,10 +284,11 @@ public class SetupWizardUtils {
             disableComponent(context, WifiSetupActivity.class);
         }
 
-        // disable location, privacy and fingerprint pages
+        // disable location, privacy, backup and fingerprint pages
         disableComponent(context, LocationSettingsActivity.class);
         disableComponent(context, LineageSettingsActivity.class);
         disableComponent(context, BiometricActivity.class);
+        disableComponent(context, RestoreIntroActivity.class);
     }
 
     public static void disableHome(Context context) {
