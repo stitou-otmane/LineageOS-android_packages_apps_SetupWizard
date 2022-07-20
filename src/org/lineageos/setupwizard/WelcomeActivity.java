@@ -38,12 +38,12 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
         SystemBarHelper.setBackButtonVisible(getWindow(), false);
         mRootView = findViewById(R.id.setup_wizard_layout);
         setNextText(R.string.start);
-        setSkipText(R.string.emergency_call);
+        //setSkipText(R.string.emergency_call);
         findViewById(R.id.start).setOnClickListener(view -> onNextPressed());
-        findViewById(R.id.emerg_dialer)
-                .setOnClickListener(view -> startEmergencyDialer());
-        findViewById(R.id.launch_accessibility)
-                .setOnClickListener(view -> startAccessibilitySettings());
+        //findViewById(R.id.emerg_dialer)
+        //        .setOnClickListener(view -> startEmergencyDialer());
+        //findViewById(R.id.launch_accessibility)
+        //        .setOnClickListener(view -> startAccessibilitySettings());
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
         mRootView.setOnTouchListener((v, event) ->

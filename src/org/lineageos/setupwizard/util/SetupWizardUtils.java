@@ -62,6 +62,10 @@ import org.lineageos.setupwizard.SimMissingActivity;
 import org.lineageos.setupwizard.WifiSetupActivity;
 import org.lineageos.setupwizard.wizardmanager.WizardManager;
 
+import org.lineageos.setupwizard.LineageSettingsActivity;
+import org.lineageos.setupwizard.LocationSettingsActivity;
+import org.lineageos.setupwizard.backup.RestoreIntroActivity;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -290,12 +294,10 @@ public class SetupWizardUtils {
     }
 
     public static void disableComponentsForMissingFeatures(Context context) {
-        if (!hasLeanback(context)) {
-            disableComponent(context, BluetoothSetupActivity.class);
-        }
-        if (!hasBiometric(context)) {
-            disableComponent(context, BiometricActivity.class);
-        }
+        disableComponent(context, BluetoothSetupActivity.class);
+
+        disableComponent(context, BiometricActivity.class);
+
         if (!hasTelephony(context)) {
             disableComponent(context, MobileDataActivity.class);
             disableComponent(context, SimMissingActivity.class);
@@ -309,6 +311,11 @@ public class SetupWizardUtils {
         if (!hasWifi(context) || isEthernetConnected(context)) {
             disableComponent(context, WifiSetupActivity.class);
         }
+
+        // disable location, privacy and backup pages
+        disableComponent(context, LocationSettingsActivity.class);
+        disableComponent(context, LineageSettingsActivity.class);
+        disableComponent(context, RestoreIntroActivity.class);
     }
 
     public static void disableHome(Context context) {
